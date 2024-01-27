@@ -3,7 +3,7 @@ import "./Weather.css";
 import "./index.css";
 import axios from "axios";
 
-export default function Weather() {
+export default function Weather(props) {
   const [ready, setReady] = useState(false);
   //const [temperature, setTemperature] = useState(null);
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -50,10 +50,10 @@ export default function Weather() {
             </div>
           </div>
         </form>
-        <h1>Sacramento</h1>
+        <h1>{weatherData.city}</h1>
         <ul>
-          <li>Friday</li>
-          <li>Party cloudy</li>
+          <li>{weatherData.date}</li>
+          <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row mt-3">
           <div className="col-6">
@@ -109,7 +109,7 @@ export default function Weather() {
     // else make the api call that will update and then it will set ready to true
   } else {
     //const apiKey = `0efb4fc16a9ed98dc0b3aafd8491d6ad`;
-    let city = "Sacramento";
+    let city = props.defaultCity;
     //let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     const apiKey = `0d7079af8c9adb3t72540o1c3a7eb56d`;
