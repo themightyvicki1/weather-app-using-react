@@ -46,13 +46,13 @@
 }
 
 /*this targets the main temp digit next to the image */
-.Weather .main-temp {
+.WeatherTemperature .mainTemp {
   font-size: 56px;
   line-height: 48px;
 }
 
 /*this will target the C F and degree placed next to each temperature, put in span so they stay side by side */
-.Weather .unit-displayed {
+.WeatherTemperature .unitDisplayed {
   font-weight: 400;
   font-size: 16px;
   position: relative;
@@ -61,7 +61,7 @@
 }
 
 /*targeting the days of the forecast*/
-.Weather .days {
+.WeatherInfo .days {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 5px;
