@@ -8,7 +8,7 @@ export default function App() {
       {/*this container is created b/c of using bootstrap*/}
       <div className="container">
         <h1>Weather app ☁</h1>
-        <Weather defaultCity="Berlin" />
+        <Weather defaultCity="Sacramento" />
         <footer>
           <a
             href="https://github.com/themightyvicki1/weather-app-using-react"

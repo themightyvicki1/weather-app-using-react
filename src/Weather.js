@@ -3,8 +3,12 @@ import "./Weather.css";
 import "./index.css";
 import axios from "axios";
 
+import WeatherInfo from "./WeatherInfo";
+
 export default function Weather(props) {
-  const [ready, setReady] = useState(false);
+  // by default, will start with defaultCity then update with searched
+  const [city, setCity] = useState(props.defaultCity);
+  //const [ready, setReady] = useState(false);
   //const [temperature, setTemperature] = useState(null);
   const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
@@ -18,20 +22,40 @@ export default function Weather(props) {
       humidity: response.data.daily[0].temperature.humidity,
       wind: response.data.daily[0].wind.speed,
       description: response.data.daily[0].condition.description,
-      icon: response.data.daily[0].condition.icon,
-      iconUrl:
-        "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png",
-      date: response.data.daily[0].time,
+      iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.daily[0].condition.icon}.png`,
+      date: new Date(response.data.daily[0].time * 1000),
     });
 
-    console.log(response.data.daily[4].temperature.day);
-    setReady(true);
+    //console.log(response.data.daily[4].temperature.day);
+    //setReady(true);
+  }
+
+  function search() {
+    //const apiKey = `0efb4fc16a9ed98dc0b3aafd8491d6ad`;
+    //let city = props.defaultCity;
+    //let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    const apiKey = `0d7079af8c9adb3t72540o1c3a7eb56d`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    //search for a city, call to function to handle this
+    search();
+  }
+
+  function handleCitySearched(event) {
+    //we don't want to prevent default behavior here
+    // store input value inside a state
+    setCity(event.target.value);
   }
 
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
               <input
@@ -39,6 +63,7 @@ export default function Weather(props) {
                 placeholder="Enter city..."
                 autoFocus="on"
                 className="form-control"
+                onChange={handleCitySearched}
               />
             </div>
             <div className="col-3">
@@ -50,72 +75,14 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <h1>{weatherData.city}</h1>
-        <ul>
-          <li>{weatherData.date}</li>
-          <li className="text-capitalize">{weatherData.description}</li>
-        </ul>
-        <div className="row mt-3">
-          <div className="col-6">
-            <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
-              alt="same as condition description"
-            />
-            <span className="main-temp">
-              {Math.round(weatherData.temperature)}
-            </span>
-            <span className="unit-displayed">°C</span>
-          </div>
-          <div className="col-6">
-            <ul>
-              <li>
-                <small>
-                  <i className="fa-solid fa-droplet"></i>
-                </small>{" "}
-                Humidity: {Math.round(weatherData.humidity)}%
-              </li>
-              <li>
-                <small>
-                  <i className="fa-solid fa-temperature-high"></i>
-                </small>{" "}
-                High: {Math.round(weatherData.maximum)}°C
-              </li>
-              <li>
-                <small>
-                  <i className="fa-solid fa-temperature-low"></i>
-                </small>{" "}
-                Low: {Math.round(weatherData.minimum)}°C
-              </li>
-              <li>
-                <small>
-                  <i className="fa-solid fa-wind"></i>
-                </small>{" "}
-                Wind Speed: {Math.round(weatherData.wind)} mph
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="daily-forecast">
-          <ul className="days">
-            <li>Mon</li>
-            <li>Tue</li>
-            <li>Wed</li>
-            <li>Thu</li>
-            <li>Fri</li>
-          </ul>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
     // else make the api call that will update and then it will set ready to true
   } else {
-    //const apiKey = `0efb4fc16a9ed98dc0b3aafd8491d6ad`;
-    let city = props.defaultCity;
-    //let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-    const apiKey = `0d7079af8c9adb3t72540o1c3a7eb56d`;
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
-    axios.get(apiUrl).then(handleResponse);
-
+    //call to search function here too to be able to get to the api call
+    //by default it knows to use defaultCity b/c sent first in main component
+    search();
     return "Loading...";
   }
 }
