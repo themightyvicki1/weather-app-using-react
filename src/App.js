@@ -1,11 +1,14 @@
 import "./App.css";
-//create structure of page here
+import Weather from "./Weather";
+// create structure of page here
+// keep app as general as i can
 export default function App() {
   return (
     <div className="App">
       {/*this container is created b/c of using bootstrap*/}
       <div className="container">
         <h1>Weather app ☁</h1>
+        <Weather />
         <footer>
           <a
             href="https://github.com/themightyvicki1/weather-app-using-react"
