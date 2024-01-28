@@ -61,11 +61,6 @@
 }
 
 /*targeting the days of the forecast*/
-.WeatherInfo .days {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 5px;
-}
 
 .WeatherInfo .dateFormatted {
   font-size: 14px;

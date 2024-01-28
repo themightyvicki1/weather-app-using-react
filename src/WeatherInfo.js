@@ -49,13 +49,16 @@ export default function WeatherInfo(props) {
         </div>
       </div>
       <div className="daily-forecast">
-        <ul className="days">
-          <li>Mon</li>
-          <li>Tue</li>
-          <li>Wed</li>
-          <li>Thu</li>
-          <li>Fri</li>
-        </ul>
+        <div className="row">
+          <div className="col">
+            <div className="forecastDay">Mon</div>
+            <div className="forecastIcon">
+              <img src={props.data.iconUrl} alt={props.data.description} />
+            </div>
+            <span className="forecastMax">19</span> |{" "}
+            <span className="forecastMin">10</span>
+          </div>
+        </div>
       </div>
     </div>
   );
