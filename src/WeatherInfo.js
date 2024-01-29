@@ -31,13 +31,13 @@ export default function WeatherInfo(props) {
               <small>
                 <i className="fa-solid fa-temperature-high"></i>
               </small>{" "}
-              High: {Math.round(props.data.maximum)}°C
+              High: {Math.round(props.data.maximum)}°
             </li>
             <li>
               <small>
                 <i className="fa-solid fa-temperature-low"></i>
               </small>{" "}
-              Low: {Math.round(props.data.minimum)}°C
+              Low: {Math.round(props.data.minimum)}°
             </li>
             <li>
               <small>
@@ -46,18 +46,6 @@ export default function WeatherInfo(props) {
               Wind Speed: {Math.round(props.data.wind)} km/h
             </li>
           </ul>
-        </div>
-      </div>
-      <div className="daily-forecast">
-        <div className="row">
-          <div className="col">
-            <div className="forecastDay">Mon</div>
-            <div className="forecastIcon">
-              <img src={props.data.iconUrl} alt={props.data.description} />
-            </div>
-            <span className="forecastMax">19</span> |{" "}
-            <span className="forecastMin">10</span>
-          </div>
         </div>
       </div>
     </div>

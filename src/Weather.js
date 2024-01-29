@@ -4,6 +4,7 @@ import "./index.css";
 import axios from "axios";
 
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function Weather(props) {
   // by default, will start with defaultCity then update with searched
@@ -11,6 +12,7 @@ export default function Weather(props) {
   //const [ready, setReady] = useState(false);
   //const [temperature, setTemperature] = useState(null);
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [forecast, setForecast] = useState(null);
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
@@ -25,6 +27,10 @@ export default function Weather(props) {
       iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.daily[0].condition.icon}.png`,
       date: new Date(response.data.daily[0].time * 1000),
     });
+    //setting the forecast here is saving basically the same weather data info but as an array, whereas above it's only being saved as the first values //
+    setForecast(response.data.daily);
+
+    //console.log(response);
 
     //console.log(response.data.daily[4].temperature.day);
     //setReady(true);
@@ -76,6 +82,9 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
+
+        {/*send the first day */}
+        <WeatherForecastDay data={forecast[0]} />
       </div>
     );
     // else make the api call that will update and then it will set ready to true
