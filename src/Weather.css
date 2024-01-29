@@ -60,21 +60,22 @@
   margin-left: 5px;
 }
 
-/*targeting the days of the forecast*/
-
-.WeatherInfo .dateFormatted {
-  font-size: 14px;
-}
-
-/*targing the daily forecast as a whole to make it in a grid */
-.WeatherForecastDay .singleDayForecast {
-  margin: 30px 0 20px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 5px;
-}
-
 /*targeting the min vaule in the daily forecast */
 .WeatherForecastDay .dailyMin {
   opacity: 0.6;
+}
+
+.WeatherForecastDay .dayOfWeek {
+  font-weight: 500;
+  font-size: 18px;
+}
+/*target the img of the icon for each day in forecast*/
+.WeatherForecastDay .iconOfDay img {
+  height: 50px;
+  width: 50px;
+  margin-top: 10px;
+}
+
+.WeatherForecastDay .dailyTemp {
+  font-size: 18px;
 }

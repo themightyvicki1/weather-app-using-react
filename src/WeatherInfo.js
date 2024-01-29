@@ -43,7 +43,7 @@ export default function WeatherInfo(props) {
               <small>
                 <i className="fa-solid fa-wind"></i>
               </small>{" "}
-              Wind Speed: {Math.round(props.data.wind)} km/h
+              Wind Speed: {Math.round(props.data.wind)} m/s
             </li>
           </ul>
         </div>
