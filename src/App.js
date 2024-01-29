@@ -7,7 +7,6 @@ export default function App() {
     <div className="App">
       {/*this container is created b/c of using bootstrap*/}
       <div className="container">
-        <h1>Weather app ☁</h1>
         <Weather defaultCity="Sacramento" />
         <footer>
           <a

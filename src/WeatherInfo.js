@@ -22,28 +22,36 @@ export default function WeatherInfo(props) {
         <div className="col-6">
           <ul>
             <li>
-              <small>
-                <i className="fa-solid fa-droplet"></i>
-              </small>{" "}
-              Humidity: {Math.round(props.data.humidity)}%
+              <div className="currentInfoDisplay">
+                <small>
+                  <i className="fa-solid fa-droplet"></i>
+                </small>{" "}
+                Humidity: {Math.round(props.data.humidity)}%
+              </div>
             </li>
             <li>
-              <small>
-                <i className="fa-solid fa-temperature-high"></i>
-              </small>{" "}
-              High: {Math.round(props.data.maximum)}°
+              <div className="currentInfoDisplay">
+                <small>
+                  <i className="fa-solid fa-temperature-high"></i>
+                </small>{" "}
+                High: {Math.round(props.data.maximum)}°
+              </div>
             </li>
             <li>
-              <small>
-                <i className="fa-solid fa-temperature-low"></i>
-              </small>{" "}
-              Low: {Math.round(props.data.minimum)}°
+              <div className="currentInfoDisplay">
+                <small>
+                  <i className="fa-solid fa-temperature-low"></i>
+                </small>{" "}
+                Low: {Math.round(props.data.minimum)}°
+              </div>
             </li>
             <li>
-              <small>
-                <i className="fa-solid fa-wind"></i>
-              </small>{" "}
-              Wind Speed: {Math.round(props.data.wind)} m/s
+              <div className="currentInfoDisplay">
+                <small>
+                  <i className="fa-solid fa-wind"></i>
+                </small>{" "}
+                Wind Speed: {Math.round(props.data.wind)} m/s
+              </div>
             </li>
           </ul>
         </div>

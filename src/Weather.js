@@ -61,6 +61,7 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
+        <h7 className="reactWeather">React Weather</h7>
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
@@ -81,12 +82,13 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <WeatherInfo data={weatherData} />
+        <div className="currentWeatherInfo mt-3">
+          <h7 className="currentWeather text-calitalize">Current weather</h7>
+          <WeatherInfo data={weatherData} />
+        </div>
 
-        <div className="forecastBeingDisplayed">
-          <h7 className="text-capitalize text-decoration-underline">
-            Five day forecast
-          </h7>
+        <div className="forecastBeingDisplayed mt-3">
+          <h7 className="text-capitalize">Extended forecast</h7>
           <div className="row">
             {/*using a map to loop through the forecast (array) variable*/}
             {forecast.map(function (dailyForecast, index) {

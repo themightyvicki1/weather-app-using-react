@@ -33,6 +33,9 @@ export default function WeatherForecastDay(props) {
               alt={props.data.condition.description}
             />
           </div>
+          <div className="forecastCondition">
+            {props.data.condition.description}
+          </div>
           <div className="dailyTemp">
             <span className="dailyMax">{maxTemperature()}</span>{" "}
             <span className="dailyMin">{minTemperature()}</span>
