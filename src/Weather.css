@@ -79,3 +79,8 @@
 .WeatherForecastDay .dailyTemp {
   font-size: 18px;
 }
+
+.FormattedDate {
+  font-size: 14px;
+  opacity: 0.6;
+}
