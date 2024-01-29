@@ -83,8 +83,18 @@ export default function Weather(props) {
         </form>
         <WeatherInfo data={weatherData} />
 
-        {/*send the first day */}
-        <WeatherForecastDay data={forecast[0]} />
+        <h7>Daily forecast</h7>
+
+        {/*using a map to loop through the forecast (array) variable*/}
+        {forecast.map(function (dailyForecast, index) {
+          if (index <= 5) {
+            return (
+              <div className="dailyForecast" key={index}>
+                <WeatherForecastDay data={dailyForecast} />
+              </div>
+            );
+          }
+        })}
       </div>
     );
     // else make the api call that will update and then it will set ready to true

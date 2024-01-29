@@ -23,8 +23,7 @@ export default function WeatherForecastDay(props) {
 
   return (
     <div className="WeatherForecastDay">
-      <h3>Daily forecast</h3>
-      <div className="dailyForecast">
+      <div className="singleDayForecast">
         <div className="eachDay text-center">
           {/*calling to the day function, which will return the day */}
           <div className="dayOfWeek">{day()} </div>
