@@ -25,7 +25,7 @@ export default function Weather(props) {
       wind: response.data.daily[0].wind.speed,
       description: response.data.daily[0].condition.description,
       iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.daily[0].condition.icon}.png`,
-      date: new Date(response.data.daily[0].time * 1000),
+      date: response.data.daily[0].time,
     });
     //setting the forecast here is saving basically the same weather data info but as an array, whereas above it's only being saved as the first values //
     setForecast(response.data.daily);
