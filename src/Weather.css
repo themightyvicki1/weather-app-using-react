@@ -67,7 +67,8 @@
 /*this targets the main temp digit next to the image */
 .WeatherTemperature .mainTemp {
   font-size: 56px;
-  line-height: 48px;
+  line-height: 1;
+  font-weight: 500;
 }
 
 /*this will target the C F and degree placed next to each temperature, put in span so they stay side by side */
