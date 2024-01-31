@@ -78,7 +78,6 @@
   position: relative;
   top: -24px;
   margin-left: 5px;
-
   padding: 3px 3px;
   border-radius: 4px;
   text-decoration: none;
@@ -173,5 +172,21 @@
 
   .WeatherInfo .description {
     font-size: 20px;
+  }
+
+  .WeatherTemperature .unitDisplayed {
+    font-size: 14px;
+    position: relative;
+    top: -10px;
+  }
+
+  .WeatherTemperature .mainTemp {
+    font-size: 40px;
+    padding: 0;
+  }
+
+  .Weather img {
+    width: 50px;
+    height: 50px;
   }
 }
