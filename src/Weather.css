@@ -97,6 +97,12 @@
   width: 100%;
 }
 
+.Weather .btn:hover {
+  color: #8594e4;
+  background-color: #f4eeff;
+  border: 1px solid #f4eeff;
+}
+
 /*targeting the min vaule in the daily forecast */
 .WeatherForecastDay .dailyMin {
   opacity: 0.6;
