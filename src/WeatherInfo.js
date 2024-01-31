@@ -12,7 +12,9 @@ export default function WeatherInfo(props) {
         <li className="dateFormatted">
           <FormattedDate date={props.data.date} />
         </li>
-        <li className="text-capitalize">{props.data.description}</li>
+        <li className="description text-capitalize">
+          {props.data.description}
+        </li>
       </ul>
       <div className="row mt-3">
         <div className="col-6">
@@ -26,7 +28,8 @@ export default function WeatherInfo(props) {
                 <small>
                   <i className="fa-solid fa-droplet"></i>
                 </small>{" "}
-                Humidity: {Math.round(props.data.humidity)}%
+                <span className="humidity">Humidity:</span>{" "}
+                {Math.round(props.data.humidity)}%
               </div>
             </li>
             <li>
@@ -34,7 +37,8 @@ export default function WeatherInfo(props) {
                 <small>
                   <i className="fa-solid fa-temperature-high"></i>
                 </small>{" "}
-                High: {Math.round(props.data.maximum)}°
+                <span className="high">High:</span>{" "}
+                {Math.round(props.data.maximum)}°
               </div>
             </li>
             <li>
@@ -42,7 +46,8 @@ export default function WeatherInfo(props) {
                 <small>
                   <i className="fa-solid fa-temperature-low"></i>
                 </small>{" "}
-                Low: {Math.round(props.data.minimum)}°
+                <span className="low">Low:</span>{" "}
+                {Math.round(props.data.minimum)}°
               </div>
             </li>
             <li>
@@ -50,7 +55,8 @@ export default function WeatherInfo(props) {
                 <small>
                   <i className="fa-solid fa-wind"></i>
                 </small>{" "}
-                Wind Speed: {Math.round(props.data.wind)} m/s
+                <span className="windSpeed">Wind Speed:</span>{" "}
+                {Math.round(props.data.wind)} m/s
               </div>
             </li>
           </ul>

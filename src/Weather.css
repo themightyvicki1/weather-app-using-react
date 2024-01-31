@@ -95,6 +95,7 @@
   background-color: #8594e4;
   border: 1px solid var(--container-background-color);
   color: #f4eeff;
+  width: 100%;
 }
 
 /*targeting the min vaule in the daily forecast */
@@ -144,4 +145,33 @@
 .forecastCondition {
   font-size: 12px;
   text-transform: capitalize;
+}
+
+@media (max-width: 576px) {
+  .Weather h1 {
+    font-size: 48px;
+  }
+
+  .Weather .btn {
+    width: 120%;
+  }
+
+  .WeatherInfo .windSpeed {
+    display: none;
+  }
+  .WeatherInfo .high {
+    display: none;
+  }
+
+  .WeatherInfo .low {
+    display: none;
+  }
+
+  .WeatherInfo .humidity {
+    display: none;
+  }
+
+  .WeatherInfo .description {
+    font-size: 20px;
+  }
 }

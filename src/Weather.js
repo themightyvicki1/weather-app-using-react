@@ -74,11 +74,7 @@ export default function Weather(props) {
               />
             </div>
             <div className="col-3">
-              <input
-                type="submit"
-                value="Search"
-                className="btn btn-primary w-100"
-              />
+              <input type="submit" value="Search" className="btn btn-primary" />
             </div>
           </div>
         </form>
@@ -88,7 +84,7 @@ export default function Weather(props) {
         </div>
 
         <div className="forecastBeingDisplayed mt-3">
-          <div className="text-capitalize">Extended forecast</div>
+          <div className="text-capitalize">Future forecast</div>
           <div className="row">
             {/*using a map to loop through the forecast (array) variable*/}
             {forecast.map(function (dailyForecast, index) {
