@@ -38,7 +38,7 @@ export default function WeatherInfo(props) {
                   <i className="fa-solid fa-temperature-high"></i>
                 </small>{" "}
                 <span className="high">High:</span>{" "}
-                {Math.round(props.data.maximum)}°
+                {Math.round(props.data.maximum)}°{" "}
               </div>
             </li>
             <li>
