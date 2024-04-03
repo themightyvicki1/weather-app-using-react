@@ -15,12 +15,8 @@ export default function App() {
             target="_blank"
             rel="noreferrer"
           >
-            Open source coded by{" "}
-          </a>{" "}
-          Victoria Greer{" "}
-          <small>
-            <i className="fa-regular fa-heart"></i>
-          </small>
+            Open source coded by Victoria Greer
+          </a>
         </footer>
       </div>
     </div>
