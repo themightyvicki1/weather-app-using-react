@@ -10,5 +10,8 @@
   margin: 10px 0;
   text-align: center;
   color: #363b4e;
+}
+
+.App footer a {
   text-decoration: none;
 }
